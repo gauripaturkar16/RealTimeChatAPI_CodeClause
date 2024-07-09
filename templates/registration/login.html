@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<style>
+  .container {
+    margin-top: 80px;
+    border-color: black;
+    border-style:groove;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #e7cdcd;
+    size
+
+  }
+  h1{
+
+      font-family:serif;
+
+   }
+
+</style>
+
+
+
+  <div class="container" style="height: 500px; width: 500px;">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+    <h1>Log-In Here</h1>
+    <div class="btn btn-light d-flex justify-content-between" style="padding: 34px 30%;">
+        
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+   
+      </div>
+    
+</div>  
+
+
+
+{% endblock %}

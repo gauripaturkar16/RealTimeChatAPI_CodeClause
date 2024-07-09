@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}
+                      Home
+    {% endblock %}
+    {% block content %}
+    {% if user.is_authenticated %}
+    
+    <style>
+
+      .container {
+        margin-top: 80px;
+        border-color: black;
+        border-style:groove;
+        border-width: 5px;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #e7cdcd;
+        size
+    
+      }
+    h5{
+      font-family: serif;
+    }
+    
+    
+    </style>
+    
+    
+      <div class="container">
+        <div class="alert alert-info d-flex justify-content-between" role="alert">
+            <h5>Available Public Rooms</h5>
+            <form method="POST" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-light">Click to Log Out</button>
+            </form>
+          </div>
+          
+          
+          {% if rooms %}
+            <div class="row equal">
+                {% for room in rooms %}
+                
+                <div class="col-sm-4 d-flex pb-3">
+                    <div class="card bg-light mb-3" style="max-width: 18rem;">
+                        <div class="card-block">
+                            <h3 class="card-title">{{room.name}}</h3>
+                            <p class="card-text">It is Public group Room Anyone can message !!!</p>
+                            <a href="/{{room.slug}}" class="btn btn-outline-secondary">Go to Room</a>
+                        </div>
+                    </div>
+                </div>
+    
+                {% endfor %}
+    
+                
+            </div>
+        {% else %}
+                No Rooms Available!
+        {% endif %}
+    </div>
+    <br>
+    <div style="padding:12px;">
+      <h4 class="mb-4">We Help People to Connect !!!</h4>
+      <P class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit perspiciatis expedita vel, consectetur nostrum aliquid ab officiis sit deserunt fuga totam necessitatibus ratione debitis, cumque obcaecati eveniet fugit voluptatem id!
+      </P>
+    
+       
+    </div>
+    
+    {% else %}
+    <div class="container">
+        <div class="alert alert-info d-flex justify-content-between" role="alert">
+            <h5>You are not logged in</h5>
+            <a href="{% url 'login' %}">
+              <button type="button" class="btn btn-light">Log In</button>
+            </a>
+            
+          </div>
+    </div>  
+    
+    {% endif %}
+    {% endblock %}
