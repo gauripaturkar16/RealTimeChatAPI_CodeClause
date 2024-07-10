@@ -28,4 +28,6 @@ HTML/CSS: Frontend structure and styling
 # Screenshot:
 ![image](https://github.com/gauripaturkar16/RealTimeChatAPI_CodeClause/assets/112767443/5d727455-6709-4af6-877e-a0989cc6a08f)
 ![image](https://github.com/gauripaturkar16/RealTimeChatAPI_CodeClause/assets/112767443/91c223a3-cebf-47ee-b30b-61964c2f5197)
+![image](https://github.com/gauripaturkar16/RealTimeChatAPI_CodeClause/assets/112767443/8b61c67d-1d2b-489a-b0d1-37e8b70d9e89)
+
 
